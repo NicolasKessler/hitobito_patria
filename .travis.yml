@@ -7,6 +7,7 @@ before_install:
   - git clone https://github.com/pfadipatria/hitobito_pbs.git
   - cd hitobito
   - cp Wagonfile.ci Wagonfile
+  - sudo apt-get install libmysql-ruby libmysqlclient-dev 
 install: bundle
 before_script:
   - bundle exec rake db:create
