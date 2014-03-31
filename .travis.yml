@@ -14,4 +14,4 @@ before_script:
   - bundle exec rake db:setup:all
   - bundle exec rake db:test:prepare
 script:
-  - bundle exec rspec
+  - bundle exec rspec spec
