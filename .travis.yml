@@ -1,7 +1,6 @@
 language: ruby
 rvm:
   - "1.9.3"
-services: memcached
 before_install:
   - cd ..
   - git clone https://github.com/pfadipatria/hitobito.git
@@ -10,8 +9,8 @@ before_install:
   - cp Wagonfile.ci Wagonfile
 install: bundle
 before_script:
-  - bundle exec rake environment RAILS_ENV=development db:create
-  - bundle exec rake environment RAILS_ENV=development db:setup:all
-  - bundle exec rake environment RAILS_ENV=development db:test:prepare
+  - bundle exec rake db:create
+  - bundle exec rake db:setup:all
+  - bundle exec rake db:test:prepare
 script:
   - bundle exec rspec

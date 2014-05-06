@@ -1,0 +1,14 @@
+-#  Copyright (c) 2014, Pfadicorps Patria Bern. This file is part of
+-#  hitobito_patria and licensed under the Affero General Public License version 3
+-#  or later. See the COPYING file at the top-level directory or at
+-#  https://github.com/pfadipatria/hitobito_patria.
+
+%tr
+  %th.right= t('census_evaluation.total') 
+  %th.right= age_count_field(@total, nil, "f")
+  %th.right= age_count_field(@total, nil, "m")  
+  - @max_birth_year.downto(@min_birth_year) do |year|
+    %th.right= age_count_field(@total, year, "f")
+    %th.right= age_count_field(@total, year, "m")
+  %th.right= count_value(@total.total_from_age_groups)
+  %th
